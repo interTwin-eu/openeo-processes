@@ -1,0 +1,24 @@
+{
+  "id": "sin_cos_doy",
+  "summary": "Add sine and cosine of day-of-year as new bands.",
+  "description": "Calculates the sine and cosine of the day-of-year from the time dimension and adds them as bands.",
+  "parameters": [
+    {
+      "name": "data",
+      "description": "The input data cube.",
+      "schema": {
+        "type": "object",
+        "subtype": "raster-cube"
+      }
+    }
+  ],
+  "returns": {
+    "description": "The input data cube with two additional bands: sin_doy and cos_doy.",
+    "schema": {
+      "type": "object",
+      "subtype": "raster-cube"
+    }
+  },
+  "categories": ["cubes", "temporal"],
+  "experimental": true
+}
