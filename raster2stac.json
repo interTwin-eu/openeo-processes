@@ -1,0 +1,28 @@
+{
+  "id": "raster2stac",
+  "summary": "Generates STAC metadata from a RasterCube and returns the cube unchanged.",
+  "description": "Uses Raster2STAC to generate STAC Collection and Item metadata for a data cube.",
+  "parameters": [
+    { "name": "data", "description": "The input data cube", "schema": { "type": "object", "subtype": "raster-cube" } },
+    { "name": "item_id", "description": "STAC item/collection ID", "schema": { "type": "string" } },
+    { "name": "collection_url", "description": "The STAC collection URL", "schema": { "type": "string" } },
+    { "name": "output_folder", "description": "Folder where STAC output is stored", "schema": { "type": "string" } },
+    { "name": "description", "description": "STAC description", "schema": { "type": "string" } },
+    { "name": "write_collection_assets", "schema": { "type": "boolean" }, "optional": true },
+    { "name": "license", "schema": { "type": "string" }, "optional": true },
+    { "name": "keywords", "schema": { "type": "array", "items": { "type": "string" } }, "optional": true },
+    { "name": "providers", "schema": { "type": "array", "items": { "type": "object" } }, "optional": true },
+    { "name": "sci_citation", "schema": { "type": "string" }, "optional": true },
+    { "name": "sci_doi", "schema": { "type": "string" }, "optional": true },
+    { "name": "links", "schema": { "type": "array", "items": { "type": "object" } }, "optional": true },
+    { "name": "s3_upload", "schema": { "type": "boolean" }, "optional": true },
+    { "name": "s3_endpoint_url", "schema": { "type": "string" }, "optional": true },
+    { "name": "bucket_name", "schema": { "type": "string" }, "optional": true },
+    { "name": "bucket_file_prefix", "schema": { "type": "string" }, "optional": true }
+  ],
+  "returns": {
+    "description": "The unchanged input RasterCube.",
+    "schema": { "type": "object", "subtype": "raster-cube" }
+  },
+  "categories": ["metadata"]
+}
