@@ -1,7 +1,7 @@
 {
   "id": "raster2stac",
   "summary": "Generates STAC metadata from a RasterCube and optionally registers it to a remote STAC API.",
-  "description": "Uses Raster2STAC to generate STAC Collection and Item metadata for a data cube. Uses 'item_id' as output folder and collection ID. Optionally posts to the collection_url endpoint.",
+  "description": "Uses Raster2STAC to generate STAC Collection and Item metadata for a data cube. Uses 'item_id' as collection ID and optionally as output folder if 'output_folder' is not provided. Optionally posts to the collection_url endpoint.",
   "parameters": [
     {
       "name": "data",
@@ -10,7 +10,7 @@
     },
     {
       "name": "item_id",
-      "description": "STAC item ID, collection ID, and output folder (used as the same)",
+      "description": "STAC item ID and collection ID",
       "schema": { "type": "string" }
     },
     {
@@ -91,6 +91,12 @@
       "name": "post_to_stac",
       "description": "Whether to POST the generated STAC metadata to a remote STAC API at collection_url.",
       "schema": { "type": "boolean" },
+      "optional": true
+    },
+    {
+      "name": "output_folder",
+      "description": "Optional base directory to save STAC metadata. Defaults to using item_id as folder name if not provided.",
+      "schema": { "type": "string" },
       "optional": true
     }
   ],
